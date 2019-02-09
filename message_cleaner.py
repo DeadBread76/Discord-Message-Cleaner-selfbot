@@ -21,7 +21,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('cleanme'):
         async for x in client.logs_from(message.channel, limit = 100):
-            if x.author.id == (client.user.id):
+            if x.author.id == str(client.user.id):
                 await client.delete_message(x)
 
 
