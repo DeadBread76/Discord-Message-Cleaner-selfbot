@@ -5,7 +5,6 @@ import asyncio
 
 
 token = input('Token:')
-clientid = input ('Client ID (Your ID):')
 client = discord.Client()
 
 
@@ -22,7 +21,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('cleanme'):
         async for x in client.logs_from(message.channel, limit = 100):
-            if x.author.id == (clientid):
+            if x.author.id == (client.user.id):
                 await client.delete_message(x)
 
 
