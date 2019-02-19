@@ -1,5 +1,10 @@
 # Discord-Message-Cleaner-selfbot
+# ```Updated!```
 
-Type "cleanme" in the channel you want to delete your messages
+You can now customise the config.json and change the Cleanphrase and Token.
 
-Cleans 100 messages sent by you from the past 14 days.
+
+~~Type "cleanme" in the channel you want to delete your messages~~
+
+~~Cleans 100 messages sent by you from the past 14 days.~~
+
