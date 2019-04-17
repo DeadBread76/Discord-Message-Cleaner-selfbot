@@ -28,13 +28,13 @@ async def on_ready():
 async def on_message(message):
     counter = 0
     if message.content.startswith(str(cleanphrase)) and message.author == client.user:
-        async for x in client.logs_from(message.channel):
-            if x.author.id == str(client.user.id):
+        async for message in message.channel.history(limit=99999):
+            if message.author == client.user:
+                await message.delete()
                 counter += 1
-                await client.delete_message(x)
         msg = "✅`Cleaned " + str(counter) + " messages.`"
-        end = await client.send_message(message.channel, msg)
-        await asyncio.sleep(1) 
-        await client.delete_message(end)
+        end = await message.channel.send(msg)
+        await asyncio.sleep(1)
+        await end.delete()
 
 client.run(token, bot=False)
